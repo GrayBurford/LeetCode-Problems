@@ -16,4 +16,10 @@ var runningSum = function(nums) {
         out[i] = nums[i] + out[i-1];
     }
     return out;
+    
+    // let prefix = [nums[0]];
+    // for (let i = 1; i < nums.length; i++){
+    //     prefix.push(nums[i] + prefix[prefix.length - 1])
+    // }
+    // return prefix;
 };
