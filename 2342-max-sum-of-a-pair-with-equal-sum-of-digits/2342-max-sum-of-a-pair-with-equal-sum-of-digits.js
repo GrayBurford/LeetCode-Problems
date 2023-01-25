@@ -18,6 +18,4 @@ var maximumSum = function(nums) {
     
 }
 
-// Initiate hash map to store digitsum versions of numbers as keys, and an array of input nums that correspond to that digitsum as the values
-// Loop over input nums and fill hash map
-// 
+// each key only stores an integer: the largest numSum.
