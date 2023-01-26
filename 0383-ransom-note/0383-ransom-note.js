@@ -39,6 +39,7 @@ var canConstruct = function(ransomNote, magazine) {
     return true;
 };
 
+// hash map approach:
 // - Loop over magazine and log each character in a hash map where the key is the character, and the value is the frequency of that character
 // - Loop over ransom note characters, check magazine for a match, and remove one count of that character if the character matches.
 // - If the char does not match, or if there are no remaining characters in magazine to match, return false.
