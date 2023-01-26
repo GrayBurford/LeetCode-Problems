@@ -36,3 +36,9 @@ var equalPairs = function(grid) {
     return output;
     
 };
+
+// - Need to compare frequency of each array between 2 hash maps -- rows and cols
+// - Need to convert row array into an immutable structure first
+// - Loop over rows and fill rowMap with values/frequency count
+// - Loop over columns and fill colMap with values/frequncy count (need nested loop to push col values into individually)
+// - Once both hash maps have unique arrays as their keys and their frequency as the values, loop again to compare both maps, and multiply row frequency by col frequency for total product of possible pairs.
