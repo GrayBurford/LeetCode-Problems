@@ -2,43 +2,25 @@
  * @param {string} s
  * @return {number}
  */
-// var lengthOfLongestSubstring = function(s) {    
-//     let seen = new Map();
+var lengthOfLongestSubstring = function(s) {    
+    let seen = new Map();
     
-//     let answer = 0;
-//     let left = 0;
+    let answer = 0;
+    let left = 0;
     
-//     for (let right = 0; right < s.length; right++) {
-//         let currChar = s[right];
-//         if (seen.has(currChar)) {
-//             left = Math.max(answer, seen.get(currChar)) ;
-//         }
-//         seen.set(currChar, right + 1);
-//         answer = Math.max(answer, right - left + 1);
-//     }
-    
-    
-//     return answer;
-// };
-
-const lengthOfLongestSubstring = function(s) {
-    let longest = 0;
-    let start = 0;  // start of the current substring
-    let seen = {};  // hashmap to keep track of characters in the current substring
-    for (let i = 0; i < s.length; i++) {
-        let char = s[i];
-        if (seen[char]) {
-            // if the character is in the hashmap, then we know that we have seen it before
-            // so we need to update the start of the current substring
-            start = Math.max(start, seen[char]);
+    for (let right = 0; right < s.length; right++) {
+        let currChar = s[right];
+        if (seen.has(currChar)) {
+            left = Math.max(left, seen.get(currChar)) ;
         }
-        // we add the current character to the hashmap
-        seen[char] = i + 1;
-        // we update the longest substring
-        longest = Math.max(longest, i - start + 1);
+        seen.set(currChar, right + 1);
+        answer = Math.max(answer, right - left + 1);
     }
-    return longest;
+    
+    
+    return answer;
 };
+
 
 // - Use sliding window and hash map
 // - hash map to log the frequency of each character in string input
