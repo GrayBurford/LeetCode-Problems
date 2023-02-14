@@ -22,3 +22,9 @@ RecentCounter.prototype.ping = function(t) {
  * var obj = new RecentCounter()
  * var param_1 = obj.ping(t)
  */
+
+// push t onto queue
+// check if first in value is within 3000 time of the most recent time value (t - 3000)
+// if first value in queue more than 3000 time, then shift it off
+// if oldest value is not within 3000 time of last addition, push newest time stamp on queue
+// return the length of the queue
