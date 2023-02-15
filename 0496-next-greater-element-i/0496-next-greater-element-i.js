@@ -6,12 +6,12 @@
 var nextGreaterElement = function(nums1, nums2) {
     let stack = []; // monotonic increasing
     let answer = new Array(nums1.length).fill(-1);
-    let hash = {}; // hashmap will store nums in nums2 and their indices
+    let hash = {}; // hashmap will store nums in nums1 and their indices
     
     // populate hashmap
-    for (let i = 0; i < nums1.length; i++) {
-        hash[nums1[i]] = i;
-    }
+    nums1.forEach((num, i) => {
+        hash[num] = i;
+    });
     
     for (let i = 0; i < nums2.length; i++) {
         while (stack.length && nums2[i] > stack[stack.length - 1]) {
