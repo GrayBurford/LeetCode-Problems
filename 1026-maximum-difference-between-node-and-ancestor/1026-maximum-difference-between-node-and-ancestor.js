@@ -36,3 +36,11 @@ var maxAncestorDiff = function(root) {
     dfs(root, root.val, root.val);
     return maxDiff;
 };
+
+// Instantiate max difference value to -Infinity
+// Build helper function to recursively check new values for min, max, and max difference
+// maxDiff updated by comparing current maxDiff to passed in min/max values, then Math.abs
+// if a left node, logic to check for new current min and new current max
+// re-call dfs() with current node, new min, new max
+// Call helper function with root node, root val as min, root val as max
+// return maxDiff
