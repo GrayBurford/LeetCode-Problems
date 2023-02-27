@@ -42,3 +42,10 @@ var deepestLeavesSum = function(root) {
     
     return sum;
 };
+
+// Instantiate BFS general template
+// Create sum variable
+// During each loop of a level/row of nodes, add each node's value to sum variable
+// After each for loop, check if nextQueue has length. If it does, reset sum to be 0. This is because any child nodes of the previous iteration would have been pushed into nextQueue.
+// If it doesn't have a length, it means no child nodes were pushed into it during the last loop iteration, therefore is currently on the last level of leaves
+// return sum
