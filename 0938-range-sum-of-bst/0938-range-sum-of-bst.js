@@ -32,7 +32,7 @@ var rangeSumBST = function(root, low, high) {
 
 // Base base, if not root, return 0 (no sum)
 // instantiate global answer variable
-// Use recursion to answer each subproblem, which will return the answer to the original problem, treating each function call like a black box
+// Use recursion to answer each subproblem, which will return the answer to the original problem, treating each function call like a black box. Sum of all nodes within the bounds of left/right subtrees, is like solving original problem if the left/right subtrees were the root. RECURSION
 // Check node (root) against low/high variables. If valid, add value
 // ***Use property of Binary Search Tree here (left nodes are less than root; right nodes are greater than root)
 // If root's value is greater than low variable, there may be valid values below in the left subtree
