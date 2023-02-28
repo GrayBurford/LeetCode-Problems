@@ -38,8 +38,11 @@ var closestValue = function(root, target) {
     return closestVal;
 };
 
-// Create closest variable starting with root node value
-// Create difference variable to hold the difference between two 
-// Use Math.abs() to find the difference between two node values
-// Use Math.min() to see if current difference is less/greater than next comparison
-
+// Create variable to hold closest value to target value, and variable to hold minimum difference between two node values
+// Use dfs function to recursively call future nodes
+// If node is null, return
+// Find diff between target value and a node by taking abs value after subtracting them.
+// If the difference is smaller than the global difference variable, update the difference variable with new value and the closestVal variable with the node's value that had a closer difference to target
+// Use BST property to check which subtree to go into -- if target is less/greater than curr node.val, recursively call that subtree
+// Call initial call to dfs function with root and target
+// Return closest val variable
