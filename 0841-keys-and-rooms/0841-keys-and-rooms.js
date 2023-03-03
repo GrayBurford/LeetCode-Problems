@@ -26,3 +26,21 @@ var canVisitAllRooms = function(rooms) {
 // At every node i, the neighbors are rooms[i] -> [...]
 // Start a dfs at node/room 0 and visit every node, then true. If we can't visit all nodes, then false.
 // Check by adding visited nodes to set seen. If size of seen never reaches length of input (num rooms), then we know we didn't visit every room (some keys couldn't be reached)
+
+// iterative approach:
+// function canVisitAllRooms (rooms) {
+//     let stack = [0];
+//     let seen = new Set([0]);
+    
+//     while (stack.length) {
+//         let node = stack.pop();
+//         for (const neighbor of (rooms[node])) {
+//             if (!seen(neighbor)) {
+//                 seen.add(neighbor);
+//                 stack.push(neighbor);
+//             }
+//         }
+//     }
+    
+//     return rooms.length > seen.size ? false : true;
+// }
