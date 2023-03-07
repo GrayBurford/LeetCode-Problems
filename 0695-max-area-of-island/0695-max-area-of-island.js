@@ -10,18 +10,20 @@ var maxAreaOfIsland = function(grid) {
     
     // DFS helper function
     function dfs(i, j) {
+        // if outside bounds
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) {
             return;
         }
         
+        // if not part of an island
         if (grid[i][j] !== 1) {
             return;
         }
         
         curr++;
-        grid[i][j] = false;
+        grid[i][j] = -1;
         
-        // 4-directional movement
+        // 4-directional movement from island square
         dfs(i + 1, j);
         dfs(i - 1, j);
         dfs(i, j + 1);
