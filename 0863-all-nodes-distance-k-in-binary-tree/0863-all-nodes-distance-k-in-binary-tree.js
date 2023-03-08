@@ -12,6 +12,7 @@
  * @return {number[]}
  */
 var distanceK = function(root, target, k) {
+    // convert binary tree to graph
     function dfs(node, parent) {
         if (!node) return;
         
