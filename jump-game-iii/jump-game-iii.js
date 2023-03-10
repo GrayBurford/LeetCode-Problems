@@ -25,14 +25,14 @@
 // };
 
 function canReach(arr, start) {
-    let visitedIndices = { start: true };
+    let seen = [];   
     
     function bfs(i) {
         if (i < 0 || i > arr.length - 1) return false;
-        if (visitedIndices[i]) return false;
+        if (seen[i] < 0) return false;
         if (arr[i] === 0) return true;
         
-        visitedIndices[i] = true;
+        seen[i] = -1;
         
         return bfs(i - arr[i]) || bfs(i + arr[i]);
     }
