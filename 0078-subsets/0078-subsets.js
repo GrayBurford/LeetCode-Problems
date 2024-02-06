@@ -4,6 +4,7 @@
  */
 var subsets = function(nums) {
     function backtrack (curr, i) {
+        // this base case will never actually get hit, since backtrack can't be called outside the length of the nums input. But good to include here for clarity
         if (i > nums.length) {
             return;
         }
