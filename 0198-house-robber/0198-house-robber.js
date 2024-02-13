@@ -34,3 +34,24 @@ var rob = function(nums) {
 // dp(0) = nums[0] and dp(1) = max(nums[0], nums[1])
 
 // We need two base cases because the recurrence on dp(1) would need dp(-1) if we didn't handle dp(1) as a base case.
+
+// BOTTOM UP IMPLEMENTATION:
+// var rob = function(nums) {
+//     if (nums.length == 1) {
+//         // to prevent out of bounds error
+//         return nums[0];
+//     }
+    
+//     let n = nums.length;
+//     let dp = new Array(n).fill(0);
+    
+//     // Base cases
+//     dp[0] = nums[0];
+//     dp[1] = Math.max(nums[0], nums[1]);
+    
+//     for (let i = 2; i < n; i++) {
+//         dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+//     }
+    
+//     return dp[n - 1];
+// };
