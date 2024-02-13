@@ -55,3 +55,29 @@ var rob = function(nums) {
     
 //     return dp[n - 1];
 // };
+
+// IMPROVING SPACE COMPLEXITY:
+// Actually, we can do better than O(n) space. When we are at state i, we only care about the previous two states. To get to state 100, we needed to go through 2 - 99, but once we're actually at 100, we don't care about 2 - 97. In the bottom-up implementation, we can replace the array with two variables that just keep track of the previous two states. arr[0] becomes obsolete once we get to arr[3] etc.
+
+// var rob = function(nums) {
+//     if (nums.length == 1) {
+//         // to prevent out of bounds error
+//         return nums[0];
+//     }
+    
+//     let n = nums.length;
+    
+//     // Base cases
+//     let backTwo = nums[0];
+//     let backOne = Math.max(nums[0], nums[1]);
+    
+//     for (let i = 2; i < n; i++) {
+//         let temp = backOne;
+//         backOne = Math.max(backOne, backTwo + nums[i]);
+//         backTwo = temp;
+//     }
+    
+//     return backOne;
+// };
+
+// This algorithm has the same time complexity, but an O(1) space complexity
