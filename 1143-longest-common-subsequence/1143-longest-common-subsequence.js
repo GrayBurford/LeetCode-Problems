@@ -41,3 +41,27 @@ var longestCommonSubsequence = function(text1, text2) {
 // text1[i] != text2[j]. Now, we need to make a decision. Either we can move to the next character in text1 or move to the next character in text2. We may as well try both - so in this case, dp(i, j) = max(dp(i + 1, j), dp(i, j + 1)).
 
 // These 2 cases form our recurrence relation. What about base cases? If i = text1.length or j = text2.length, then one of the strings has been exhausted, and since no characters are remaining, there cannot be any common characters. Return 0.
+
+
+// BOTTOM-UP (start iterating from the base cases)
+// var longestCommonSubsequence = function(text1, text2) {
+//     let n = text1.length, m = text2.length;
+//     let dp = [];
+//     for (let i = 0; i <= n; i++) {
+//         dp.push(new Array(m + 1).fill(0));
+//     }
+    
+//     for (let i = n - 1; i >= 0; i--) {
+//         for (let j = m - 1; j >= 0; j--) {
+//             if (text1[i] == text2[j]) {
+//                 dp[i][j] = 1 + dp[i + 1][j + 1];
+//             } else {
+//                 dp[i][j] = Math.max(dp[i + 1][j], dp[i][j + 1]);
+//             }
+//         }
+//     }
+
+//     return dp[0][0];
+// };
+
+// Because the work done at each state is O(1), this algorithm has a time and space complexity of O(n⋅m), where n = text1.length and m = text2.length.
