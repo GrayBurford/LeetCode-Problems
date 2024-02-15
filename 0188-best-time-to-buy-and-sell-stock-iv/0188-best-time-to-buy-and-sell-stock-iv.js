@@ -59,3 +59,36 @@ var maxProfit = function(k, prices) {
 
 // For holding, we can use 0 to represent false and 1 to represent true as well.
 
+// BOTTOM-UP:
+// Here's the bottom-up implementation. You can see that configuring the for loops can be tricky. The important thing to remember is that we need to start iterating from the base cases, so we start iterating i from n and remain from 1, where n = prices.length.
+
+// var maxProfit = function(k, prices) {
+//     let n = prices.length;
+//     let dp = [];
+//     for (let i = 0; i <= n; i++) {
+//         dp.push([]);
+//         for (let j = 0; j < 2; j++) {
+//             dp[i].push(new Array(k + 1).fill(0));
+//         }
+//     }
+    
+//     for (let i = n - 1; i >= 0; i--) {
+//         for (let remain = 1; remain <= k; remain++) {
+//             for (let holding = 0; holding < 2; holding++) {
+//                 let ans = dp[i + 1][holding][remain];
+//                 if (holding == 1) {
+//                     ans = Math.max(ans, prices[i] + dp[i + 1][0][remain - 1]);
+//                 } else {
+//                     ans = Math.max(ans, -prices[i] + dp[i + 1][1][remain]);
+//                 }
+                
+//                 dp[i][holding][remain] = ans;
+//             }
+//         }
+//     }
+    
+//     return dp[0][0][k];
+// };
+
+
+// The work done at each state is O(1), so the time and space complexity is equal to the number of states. The product of the range of each of the state variables is the number of states - which gives us a time and space complexity of O(n⋅k). holding is constant, the n comes from i, and the k comes from remain.
