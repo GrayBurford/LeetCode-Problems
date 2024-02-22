@@ -22,3 +22,5 @@ var singleNumber = function(nums) {
 // XOR properties: x XOR x = 0 and 0 XOR y = y. Therefore x XOR x XOR y = y.
 
 // We have many instances of x XOR x in the input, which will all result in 0. All these 0 XOR'd with each other will also be 0, which leaves us with 0 XOR y = y as the final answer. Note that the order in which you perform the XORs is irrelevant, which is why this algorithm works.
+
+// This gives us an algorithm with O(n) time and O(1) space. Speaking in practical terms, this algorithm is even faster than the hash map approach because integer and bit operations are extremely fast, whereas a hash map has overhead.
